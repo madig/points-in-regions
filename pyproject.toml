@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "points-in-regions"
+version = "0.1.0"
+description = "Playground for Designspace location and region fiddling."
+authors = ["Nikolaus Waxweiler <madigens@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+pytest = "^6.2"
+hypothesis = "^6.23"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
