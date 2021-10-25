@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping, Union
+from typing import Mapping, Optional, Union
 
 from hypothesis import assume, given
 from hypothesis import strategies as st
@@ -21,6 +21,14 @@ class Range:
         if isinstance(value, Stops):
             return all(self.start <= stop <= self.end for stop in value.stops)
         return self.start <= value <= self.end
+
+    def intersection(self, other: Range) -> Optional[Range]:
+        self_start, self_end = sorted((self.start, self.end))
+        other_start, other_end = sorted((other.start, other.end))
+        if self_end < other_start or self_start > other_end:
+            return None
+        else:
+            return Range(max(self_start, other_start), min(self_end, other_end))
 
 
 @dataclass
