@@ -88,9 +88,9 @@ def test_aktiv_rules_subsets() -> None:
                 "Italic": Range(0.1, 1),
             }
         ],
-        "BRACKET.116.185": [
+        "BRACKET.601.900": [
             {
-                "Weight": Range(116, 185),
+                "Weight": Range(601, 900),
                 "Width": Range(75, 97.5),
                 # "Italic": Range(-math.inf, math.inf),
             }
@@ -105,9 +105,9 @@ def test_aktiv_rules_subsets() -> None:
         "Italic": 0,
     }
     rules_wght_wdth: Rules = {
-        "BRACKET.116.185": [
+        "BRACKET.601.900": [
             {
-                "Weight": Range(116, 185),
+                "Weight": Range(601, 900),
                 "Width": Range(75, 97.5),
                 # "Italic": Range(-math.inf, math.inf),
             }
@@ -146,9 +146,9 @@ def test_aktiv_rules_subsets() -> None:
                 # "Italic": Range(-math.inf, math.inf),
             }
         ],
-        "BRACKET.116.185": [
+        "BRACKET.601.900": [
             {
-                "Weight": Range(116, 185),
+                "Weight": Range(601, 900),
                 "Width": Range(75, 97.5),
                 # "Italic": Range(-math.inf, math.inf),
             }
@@ -175,7 +175,7 @@ def test_aktiv_rules_subsets() -> None:
 
     # Weight from Bold to Black, Width condensed, Italic 1:
     region1: RegionSelection = {
-        "Weight": Range(133, 185),
+        "Weight": Range(700, 900),
         "Width": 75,
         "Italic": 1,
     }
@@ -187,7 +187,7 @@ def test_aktiv_rules_subsets() -> None:
                 # "Italic": Range(-math.inf, math.inf),
             }
         ],
-        "BRACKET.116.185": [
+        "BRACKET.601.900": [
             {
                 # "Weight": Range(-math.inf, math.inf),
                 # "Width": Range(-math.inf, math.inf),
@@ -199,7 +199,7 @@ def test_aktiv_rules_subsets() -> None:
 
     # Wght from Bold to Black, All width, Italic 1:
     region2: RegionSelection = {
-        "Weight": Range(133, 185),
+        "Weight": Range(700, 900),
         "Width": Range(-math.inf, math.inf),
         "Italic": 1,
     }
@@ -211,7 +211,7 @@ def test_aktiv_rules_subsets() -> None:
                 # "Italic": Range(-math.inf, math.inf),
             }
         ],
-        "BRACKET.116.185": [
+        "BRACKET.601.900": [
             {
                 # "Weight": Range(-math.inf, math.inf),
                 "Width": Range(75, 97.5),
@@ -223,7 +223,7 @@ def test_aktiv_rules_subsets() -> None:
 
     # All Weight, Width from Normal to Extended, Italic 1:
     region3: RegionSelection = {
-        "Weight": Range(133, 185),
+        "Weight": Range(700, 900),
         "Width": Range(100, 125),
         "Italic": 1,
     }
@@ -238,14 +238,14 @@ def test_aktiv_rules_subsets() -> None:
     }
     assert subset_rules(all_rules, region3) == region3_rules
 
-    # All Weight, Width from Normal to Extended, Italic 1:
+    # Bold Weight, Width from 0 to 90, Italic 0:
     region4: RegionSelection = {
-        "Weight": 120,
+        "Weight": 700,
         "Width": Range(0, 90),
         "Italic": 0,
     }
     region4_rules: Rules = {
-        "BRACKET.116.185": [
+        "BRACKET.601.900": [
             {
                 # "Weight": Range(-math.inf, math.inf),
                 "Width": Range(75, 90),
